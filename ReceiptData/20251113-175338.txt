@@ -1,0 +1,30 @@
+========================================================
+              BAKEHOUSE05: Order Receipt                
+           Your Custom Cake Shop Experience            
+========================================================
+Order Time: 20251113-175338
+--------------------------------------------------------
+
+CAKES:
+1. Small (6") Vanilla Cake
+  Toppings:
+    - Vanilla Cream
+    - Chocolate Cream
+    - Raspberry Compote +$1.99
+    - Salted Caramel (Extra) +$2.30
+  Special Message: Yes (+$5.00)
+  Price: $20.28
+
+DRINKS:
+1. Small Coffee - $1.99
+
+SIDES:
+1. Cupcake - $3.99
+
+--------------------------------------------------------
+ORDER TOTAL: $26.26
+
+========================================================
+         Thank you for visiting Bakehouse05!           
+              We hope you enjoy your treats!            
+========================================================
