@@ -10,31 +10,31 @@ public class ToppingMenu {
         boolean addingFillings = true;
 
         while (addingFillings) {
-            System.out.println("\n========== REGULAR FILLINGS (FREE) ==========");
-            System.out.println("1) Vanilla Cream");
-            System.out.println("2) Chocolate Cream");
-            System.out.println("3) Strawberry Jam");
-            System.out.println("4) Blueberry Jam");
-            System.out.println("5) Lemon Curd");
-            System.out.println("6) Custard");
-            System.out.println("7) Mocha Cream");
-            System.out.println("0) Done adding regular fillings");
+            System.out.println("\n========== \uD83C\uDF70 REGULAR FILLINGS (FREE) ==========");
+            System.out.println("\uD83C\uDF66 1) Vanilla Cream");
+            System.out.println("\uD83C\uDF6B 2) Chocolate Cream");
+            System.out.println("\uD83C\uDF53 3) Strawberry Jam");
+            System.out.println("\uD83E\uDED0 4) Blueberry Jam");
+            System.out.println("\uD83C\uDF4B 5) Lemon Curd");
+            System.out.println("\uD83C\uDF6E 6) Custard");
+            System.out.println("\uD83E\uDD0E 7) Mocha Cream");
+            System.out.println("\uD83D\uDED1 0) Done adding regular fillings");
             System.out.println("=============================================");
 
-            int choice = ValidUserInput.getIntChoice("Select a filling (0 when done): ", 0, 7);
+            int choice = ValidUserInput.getIntChoice("\uD83C\uDFAF Select a filling (0 when done): ", 0, 7);
 
             if (choice == 0) {
                 addingFillings = false;
             } else {
                 String fillingName = getRegularFillingName(choice);
-                boolean isExtra = ValidUserInput.getYesNo("  Would you like EXTRA " + fillingName + "? (+$1.50)");
+                boolean isExtra = ValidUserInput.getYesNo("  \uD83D\uDD0E Would you like EXTRA " + fillingName + "? (+$1.50)");
                 Topping filling = new Topping(fillingName, ToppingCategory.REGULAR, isExtra);
                 cake.addTopping(filling);
                 // Show proper confirmation message
                 if (isExtra) {
-                    System.out.println("✓ Added " + fillingName + " (Extra) +$1.50");
+                    System.out.println("✅ Added " + fillingName + " (Extra) +$1.50");
                 } else {
-                    System.out.println("✓ Added " + fillingName + " - FREE");
+                    System.out.println("✅ Added " + fillingName + " - FREE");
                 }
             }
         }
@@ -45,29 +45,28 @@ public class ToppingMenu {
         boolean addingFillings = true;
 
         while (addingFillings) {
-            System.out.println("\n========== PREMIUM FILLINGS (+$2.00 each) ==========");
-            System.out.println("1) Pistachio Cream");
-            System.out.println("2) Salted Caramel");
-            System.out.println("3) Cream Cheese Filling");
-            System.out.println("4) Raspberry Compote");
-            System.out.println("5) Ferraro Rocher Filling");
-            System.out.println("6) Ube Hala-ya");
-            System.out.println("7) Mango Cream");
-            System.out.println("0) Done adding premium fillings");
+            System.out.println("\n========== \uD83C\uDF70 PREMIUM FILLINGS (+$2.00 each) ==========");
+            System.out.println("\uD83E\uDDC6 1) Pistachio Cream");
+            System.out.println("\uD83E\uDDC2 2) Salted Caramel");
+            System.out.println("\uD83E\uDDC0 3) Cream Cheese Filling");
+            System.out.println("\uD83C\uDF47 4) Raspberry Compote");
+            System.out.println("\uD83C\uDF30 5) Ferraro Rocher Filling");
+            System.out.println("\uD83E\uDD6D 6) Mango Cream");
+            System.out.println("\uD83D\uDED1 0) Done adding premium fillings");
             System.out.println("====================================================");
 
-            int choice = ValidUserInput.getIntChoice("Select a filling (0 when done): ", 0, 7);
+            int choice = ValidUserInput.getIntChoice("\uD83C\uDFAF Select a filling (0 when done): ", 0, 6);
 
             if (choice == 0) {
                 addingFillings = false;
             } else {
                 String fillingName = getPremiumFillingName(choice);
-                boolean isExtra = ValidUserInput.getYesNo("  Would you like EXTRA " + fillingName + "? (+$1.50 more)");
+                boolean isExtra = ValidUserInput.getYesNo("  \uD83D\uDD0E Would you like EXTRA " + fillingName + "? (+$1.50 more)");
                 Topping filling = new Topping(fillingName, ToppingCategory.PREMIUM, isExtra);
                 cake.addTopping(filling);
 
                 // Show proper confirmation with correct pricing
-                System.out.printf("✓ Added %s - +$%.2f\n", isExtra ? fillingName + " (Premium + Extra)" : fillingName + " (Premium)", filling.getPrice());
+                System.out.printf("✅ Added %s - +$%.2f\n", isExtra ? fillingName + " (Premium + Extra)" : fillingName + " (Premium)", filling.getPrice());
             }
         }
     }
@@ -77,31 +76,31 @@ public class ToppingMenu {
         boolean addingToppings = true;
 
         while (addingToppings) {
-            System.out.println("\n========== REGULAR TOPPINGS (FREE) ==========");
-            System.out.println("1) Buttercream");
-            System.out.println("2) Whipped Cream");
-            System.out.println("3) Chocolate Ganache");
-            System.out.println("4) Fresh Fruits");
-            System.out.println("5) Candied Fruits");
-            System.out.println("6) Sprinkles");
-            System.out.println("7) Nuts");
-            System.out.println("0) Done adding regular toppings");
+            System.out.println("\n========== \uD83C\uDF70 REGULAR TOPPINGS (FREE) ==========");
+            System.out.println("\uD83E\uDDC8 1) Buttercream");
+            System.out.println("\uD83E\uDD63 2) Whipped Cream");
+            System.out.println("\uD83C\uDF6B 3) Chocolate Ganache");
+            System.out.println("\uD83C\uDF4A 4) Fresh Fruits");
+            System.out.println("\uD83C\uDF52 5) Candied Fruits");
+            System.out.println("✨6) Sprinkles");
+            System.out.println("\uD83C\uDF30 7) Nuts");
+            System.out.println("\uD83D\uDED1 0) Done adding regular toppings");
             System.out.println("============================================");
 
-            int choice = ValidUserInput.getIntChoice("Select a topping (0 when done): ", 0, 7);
+            int choice = ValidUserInput.getIntChoice("\uD83C\uDFAFSelect a topping (0 when done): ", 0, 7);
 
             if (choice == 0) {
                 addingToppings = false;
             } else {
                 String toppingName = getRegularToppingName(choice);
-                boolean isExtra = ValidUserInput.getYesNo("  Would you like EXTRA " + toppingName + "? (+$1.50)");
+                boolean isExtra = ValidUserInput.getYesNo("  \uD83D\uDD0E Would you like EXTRA " + toppingName + "? (+$1.50)");
                 Topping topping = new Topping(toppingName, ToppingCategory.REGULAR, isExtra);
                 cake.addTopping(topping);
                 // Show proper confirmation message
                 if (isExtra) {
-                    System.out.println("✓ Added " + toppingName + " (Extra) +$1.50");
+                    System.out.println("✅ Added " + toppingName + " (Extra) +$1.50");
                 } else {
-                    System.out.println("✓ Added " + toppingName + " - FREE");
+                    System.out.println("✅ Added " + toppingName + " - FREE");
                 }
             }
         }
@@ -112,28 +111,28 @@ public class ToppingMenu {
         boolean addingToppings = true;
 
         while (addingToppings) {
-            System.out.println("\n========== PREMIUM TOPPINGS (+$2.00 each) ==========");
-            System.out.println("1) Edible Gold");
-            System.out.println("2) Silver Leaves");
-            System.out.println("3) Dubai Chocolate");
-            System.out.println("4) Macaron");
-            System.out.println("5) Edible Flowers");
-            System.out.println("6) Coconut");
-            System.out.println("0) Done adding premium toppings");
+            System.out.println("\n========== \uD83C\uDF70 PREMIUM TOPPINGS (+$2.00 each) ==========");
+            System.out.println("\uD83C\uDF1F 1) Edible Gold");
+            System.out.println("☘ 2) Silver Leaves");
+            System.out.println("\uD83C\uDF6B 3) Dubai Chocolate");
+            System.out.println("\uD83C\uDF694) Macaron");
+            System.out.println("\uD83C\uDF3A 5) Edible Flowers");
+            System.out.println("\uD83E\uDD65 6) Coconut");
+            System.out.println("\uD83D\uDED1 0) Done adding premium toppings");
             System.out.println("===================================================");
 
-            int choice = ValidUserInput.getIntChoice("Select a topping (0 when done): ", 0, 6);
+            int choice = ValidUserInput.getIntChoice("\uD83C\uDFAF Select a topping (0 when done): ", 0, 6);
 
             if (choice == 0) {
                 addingToppings = false;
             } else {
                 String toppingName = getPremiumToppingName(choice);
-                boolean isExtra = ValidUserInput.getYesNo("  Would you like EXTRA " + toppingName + "? (+$1.50 more)");
+                boolean isExtra = ValidUserInput.getYesNo("  \uD83D\uDD0E Would you like EXTRA " + toppingName + "? (+$1.50 more)");
                 Topping topping = new Topping(toppingName, ToppingCategory.PREMIUM, isExtra);
                 cake.addTopping(topping);
 
                 // Show proper confirmation with correct pricing
-                System.out.printf("✓ Added %s - +$%.2f\n", isExtra ? toppingName + " (Premium + Extra)" : toppingName + " (Premium)", topping.getPrice());
+                System.out.printf("✅ Added %s - +$%.2f\n", isExtra ? toppingName + " (Premium + Extra)" : toppingName + " (Premium)", topping.getPrice());
             }
         }
     }

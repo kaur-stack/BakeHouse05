@@ -97,7 +97,7 @@ public class SignatureCake extends Cake {
         // Show signature name prominently
         sb.append("⭐ ").append(signatureType.getName());
         if (isCustomized) {
-            sb.append(" (Customized)");
+            sb.append(" (Customized\uD83D\uDCAC)");
         }
         sb.append("\n");
 
@@ -108,7 +108,7 @@ public class SignatureCake extends Cake {
         // Show toppings
         List<Topping> toppings = getToppings();
         if (!toppings.isEmpty()) {
-            sb.append("  Toppings & Fillings:\n");
+            sb.append("  \uD83C\uDF52 Toppings & Fillings:\n");
             for (Topping topping : toppings) {
                 sb.append("    - ").append(topping.toString()).append("\n");
             }
@@ -116,10 +116,10 @@ public class SignatureCake extends Cake {
 
         // Special message
         if (hasSpecialMessage()) {
-            sb.append("  Special Message: Yes (+$5.00)\n");
+            sb.append("  \uD83D\uDCDC Special Message: Yes (+$5.00)\n");
         }
 
-        sb.append(String.format("  Price: $%.2f", calculatePrice()));
+        sb.append(String.format("  \uD83D\uDCB8 Price: $%.2f", calculatePrice()));
 
         return sb.toString();
     }

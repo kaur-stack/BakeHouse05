@@ -29,12 +29,12 @@ public class HomeScreen {
         while (endProgram) {
             Display.displayHomeScreen();
 
-            int userChoice = ValidUserInput.getIntChoice("Enter your choice: ", 0, 1);
+            int userChoice = ValidUserInput.getIntChoice("➡ Enter your choice: ", 0, 1);
 
             switch (userChoice) {
                 case 1:
                     currentOrder = new Order();
-                    System.out.println("\n New order started!");
+                    System.out.println("\n\uD83C\uDD95 New order started!");
                     showOrderScreen();
                     break;
                 case 0:
@@ -50,7 +50,7 @@ public class HomeScreen {
         while (orderInProcess) {
             Display.displayOrderScreen();
 
-            int choice = ValidUserInput.getIntChoice("Enter your choice: ", 0, 5);
+            int choice = ValidUserInput.getIntChoice("➡ Enter your choice: ", 0, 5);
 
             switch (choice) {
                 case 1:
@@ -69,8 +69,8 @@ public class HomeScreen {
                     orderInProcess = !checkout();
                     break;
                 case 0:
-                    if (ValidUserInput.getYesNo("Are you sure you want to cancel this order?")) {
-                        System.out.println("\n Order cancelled.");
+                    if (ValidUserInput.getYesNo("\uD83D\uDEA8 Are you sure you want to cancel this order?")) {
+                        System.out.println("\n⛔ Order cancelled.");
                         currentOrder = null;
                         orderInProcess = false;
                     }
@@ -80,88 +80,88 @@ public class HomeScreen {
     }
 
     private static void addCake() {
-        System.out.println("\n========== CUSTOMIZE YOUR CAKE ==========\n");
+        System.out.println("\n========== \uD83C\uDF70 CUSTOMIZE YOUR CAKE \uD83C\uDF70 ==========\n");
 
-        System.out.println("Select cake flavor:");
+        System.out.println("\uD83C\uDFAF Select cake flavor:");
         CakeType[] types = CakeType.values();
         for (int i = 0; i < types.length; i++) {
             System.out.println((i + 1) + ") " + types[i].getDisplay());
         }
-        int typeChoice = ValidUserInput.getIntChoice("Choice: ", 1, types.length);
+        int typeChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, types.length);
         CakeType userPickedType = types[typeChoice - 1];
 
-        System.out.println("\nSelect cake size:");
+        System.out.println("\n \uD83C\uDFAF Select cake size:");
         CakeSize[] sizes = CakeSize.values();
         for (int i = 0; i < sizes.length; i++) {
             System.out.printf("%d) %s - $%.2f\n", (i + 1),
                     sizes[i].getDisplay(), sizes[i].getBasePrice());
         }
-        int sizesChoice = ValidUserInput.getIntChoice("Choice: ", 1, sizes.length);
+        int sizesChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, sizes.length);
         CakeSize userPickedSize = sizes[sizesChoice - 1];
 
         Cake cake = new Cake(userPickedSize, userPickedType);
 
-        System.out.println("\n--- TOPPINGS ---");
+        System.out.println("\n--- \uD83C\uDF6F TOPPINGS \uD83C\uDF6F ---");
 
-        System.out.println("\n===== ADD FILLINGS =====");
+        System.out.println("\n===== \uD83C\uDF70 ADD FILLINGS \uD83C\uDF70 =====");
         ToppingMenu.addRegularFillings(cake);
         ToppingMenu.addPremiumFillings(cake);
 
         // Step 4: Add TOPPINGS (Regular and Premium)
-        System.out.println("\n===== ADD TOPPINGS =====");
+        System.out.println("\n===== \uD83C\uDF53 ADD TOPPINGS \uD83C\uDF53 =====");
         ToppingMenu.addRegularToppings(cake);
         ToppingMenu.addPremiumToppings(cake);
 
         // Step 5: Special message option
-        System.out.println("\n===== SPECIAL OPTION =====");
+        System.out.println("\n===== ✨ SPECIAL OPTION ✨ =====");
         if (ValidUserInput.getYesNo("Would you like a custom message printed on the cake? (+$5.00)")) {
             addSpecialMessageToCake(cake);
         }
 
         currentOrder.addProduct(cake);
-        System.out.println("\n✓ Cake added to order!");
+        System.out.println("\n✅ Cake added to order!");
         System.out.printf("  This cake costs: $%.2f\n", cake.calculatePrice());
     }
 
     private static void addDrink() {
-        System.out.println("\n========== ADD DRINK ==========\n");
+        System.out.println("\n========== \uD83C\uDF79 ADD DRINK \uD83E\uDD42 ==========\n");
 
-        System.out.println("Select drink flavor:");
+        System.out.println("☕ Select drink flavor:");
         DrinkFlavor[] flavors = DrinkFlavor.values();
         for (int i = 0; i < flavors.length; i++) {
             System.out.println((i + 1) + ") " + flavors[i].getDisplay());
         }
 
-        int flavorChoice = ValidUserInput.getIntChoice("Choice: ", 1, flavors.length);
+        int flavorChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, flavors.length);
         DrinkFlavor userPickedFlavor = flavors[flavorChoice - 1];
 
-        System.out.println("\nSelect Size:");
+        System.out.println("\n \uD83C\uDFAF Select Size:");
         DrinkSize[] sizes = DrinkSize.values();
         for (int i = 0; i < sizes.length; i++) {
             System.out.printf("%d) %s - $%.2f\n", (i + 1), sizes[i].getDisplay(), sizes[i].getPrice());
         }
 
-        int sizeChoice = ValidUserInput.getIntChoice("Choice: ", 1, sizes.length);
+        int sizeChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, sizes.length);
         DrinkSize userPickedSize = sizes[sizeChoice - 1];
 
         Drink drink = new Drink(userPickedSize, userPickedFlavor);
 
         currentOrder.addProduct(drink);
 
-        System.out.println("\n Drink added to order!");
+        System.out.println("\n\uD83E\uDD42 Drink added to order!");
         System.out.printf("  Price: $%.2f\n", drink.calculatePrice());
     }
 
     private static void addSide() {
-        System.out.println("\n========== ADD SIDE ==========\n");
+        System.out.println("\n========== \uD83C\uDF6A ADD SIDE \uD83C\uDF6A ==========\n");
 
-        System.out.println("Select a side:");
+        System.out.println("\uD83C\uDFAF Select a side:");
         SideType[] types = SideType.values();
         for (int i = 0; i < types.length; i++) {
             System.out.printf("%d) %s - $%.2f\n", (i + 1),
                     types[i].getDisplay(), types[i].getPrice());
         }
-        int sideChoice = ValidUserInput.getIntChoice("Choice: ", 1, types.length);
+        int sideChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, types.length);
         SideType userPickedType = types[sideChoice - 1];
 
         Side side = new Side(userPickedType);
@@ -169,20 +169,20 @@ public class HomeScreen {
         // POLYMORPHISM: Adding a Side as a Product
         currentOrder.addProduct(side);
 
-        System.out.println("\n✓ Side added to order!");
+        System.out.println("\n✅ Side added to order!");
         System.out.printf("  Price: $%.2f\n", side.calculatePrice());
     }
 
     private static boolean checkout() {
-        System.out.println("\n========== CHECKOUT ==========\n");
+        System.out.println("\n========== \uD83D\uDED2 CHECKOUT \uD83D\uDED2 ==========\n");
 
         if (currentOrder.isEmpty()) {
-            System.out.println("Your order is empty! Please add at least one item.");
+            System.out.println("\uD83E\uDEAB Your order is empty! Please add at least one item.");
             return false;
         }
 
         if (!currentOrder.isValid()) {
-            System.out.println("If you don't order a cake, you must add at least a drink or side!");
+            System.out.println("\uD83D\uDEA8 If you don't order a cake, you must add at least a drink or side!");
             return false;
         }
 
@@ -190,12 +190,12 @@ public class HomeScreen {
 
         if (ValidUserInput.getYesNo("\nConfirm this order?")) {
             receiptsFileManager.generateReceipt(currentOrder);
-            System.out.println("\n Order completed! Enjoy your treats! 🍰");
+            System.out.println("\n✅ Order completed! Enjoy your treats! 🍰");
             currentOrder = null;
             ValidUserInput.waitForEnter();
             return true;
         } else {
-            System.out.println("\nOrder not confirmed. Returning to order screen...");
+            System.out.println("\n❌Order not confirmed. Returning to order screen...");
             return false;
         }
     }
@@ -203,8 +203,8 @@ public class HomeScreen {
     // Handle Signature Order:
     public static void addSignatureCake() {
         System.out.println("\n========== SIGNATURE CAKES ==========\n");
-        System.out.println("Our chef's special pre-designed cakes!");
-        System.out.println("You can still customize by adding or removing toppings.\n");
+        System.out.println("\uD83D\uDC69\uD83C\uDFFB\u200D\uD83C\uDF73 Our chef's special pre-designed cakes!");
+        System.out.println("\uD83C\uDF7D\uFE0F You can still customize by adding or removing toppings.\n");
 
         SignatureType[] types = SignatureType.values();
         for (int i = 0; i < types.length; i++) {
@@ -214,9 +214,9 @@ public class HomeScreen {
                     types[i].getDefaultSize().getDisplay(),
                     types[i].getDefaultSize().getBasePrice());
         }
-        System.out.println("0) Go back");
+        System.out.println("\uD83D\uDD34 0) Go back");
 
-        int userChoice = ValidUserInput.getIntChoice("Select a signature cake: ", 0, types.length);
+        int userChoice = ValidUserInput.getIntChoice("\uD83D\uDCE7 Select a signature cake: ", 0, types.length);
 
         if (userChoice == 0) {
             return;  // Go back to order screen
@@ -225,17 +225,17 @@ public class HomeScreen {
         SignatureType selectedType = types[userChoice - 1];
 
         System.out.println("\nDefault size is " + selectedType.getDefaultSize().getDisplay());
-        boolean changeSize = ValidUserInput.getYesNo("Would you like a different size?");
+        boolean changeSize = ValidUserInput.getYesNo("\uD83D\uDD0E Would you like a different size?");
 
         SignatureCake cake;
         if (changeSize) {
-            System.out.println("\nSelect size:");
+            System.out.println("\n \uD83C\uDFAF Select size:");
             CakeSize[] sizes = CakeSize.values();
             for (int i = 0; i < sizes.length; i++) {
                 System.out.printf("%d) %s - $%.2f\n", (i + 1),
                         sizes[i].getDisplay(), sizes[i].getBasePrice());
             }
-            int sizeChoice = ValidUserInput.getIntChoice("Choice: ", 1, sizes.length);
+            int sizeChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC  Choice: ", 1, sizes.length);
             CakeSize selectedSize = sizes[sizeChoice - 1];
             cake = new SignatureCake(selectedType, selectedSize);
         } else {
@@ -243,20 +243,20 @@ public class HomeScreen {
         }
 
         // Show current toppings
-        System.out.println("\n===== YOUR SIGNATURE CAKE =====");
+        System.out.println("\n===== ⭐ YOUR SIGNATURE CAKE ⭐=====");
         System.out.println(cake.getDescription());
 
         // Customization
         boolean customizing = true;
         while (customizing) {
             System.out.println("\n===== CUSTOMIZE YOUR SIGNATURE CAKE =====");
-            System.out.println("1) Remove a topping/filling");
-            System.out.println("2) Add more toppings/fillings");
-            System.out.println("3) Add special message (+$5.00)");
+            System.out.println("\uD83D\uDEAB 1) Remove a topping/filling");
+            System.out.println("\uD83C\uDF38 2) Add more toppings/fillings");
+            System.out.println("\uD83D\uDCDC 3) Add special message (+$5.00)");
             System.out.println("4) Finish and add to order");
             System.out.println("=========================================");
 
-            int customChoice = ValidUserInput.getIntChoice("Choice: ", 1, 4);
+            int customChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, 4);
 
             switch (customChoice) {
                 case 1:
@@ -269,8 +269,8 @@ public class HomeScreen {
                     if (!cake.hasSpecialMessage()) {
                         addSpecialMessageToCake(cake);
                     } else {
-                        System.out.println("Special message already added: \"" + cake.getSpecialMessage() + "\"");
-                        if (ValidUserInput.getYesNo("Would you like to change it?")) {
+                        System.out.println("\uD83D\uDCE7 Special message already added: \"" + cake.getSpecialMessage() + "\"");
+                        if (ValidUserInput.getYesNo("\uD83D\uDD0E Would you like to change it?")) {
                             addSpecialMessageToCake(cake);
                         }
                     }
@@ -287,7 +287,7 @@ public class HomeScreen {
 
         // Add to order (POLYMORPHISM - SignatureCake is a Product)
         currentOrder.addProduct(cake);
-        System.out.println("\n✓ Signature cake added to order!");
+        System.out.println("\n✅ Signature cake added to order!");
         System.out.printf("  Total price: $%.2f\n", cake.calculatePrice());
 
 
@@ -297,39 +297,38 @@ public class HomeScreen {
         List<Topping> toppings = cake.getToppingsList();
 
         if (toppings.isEmpty()) {
-            System.out.println("\nNo toppings to remove!");
+            System.out.println("\n❌ No toppings to remove!");
             return;
         }
 
-        System.out.println("\n===== CURRENT TOPPINGS/FILLINGS =====");
+        System.out.println("\n===== \n\uD83C\uDF6F\uD83C\uDF53 CURRENT TOPPINGS/FILLINGS \n\uD83C\uDF6F\uD83C\uDF53 =====");
         for (int i = 0; i < toppings.size(); i++) {
             System.out.printf("%d) %s\n", (i + 1), toppings.get(i).getName());
         }
-        System.out.println("0) Cancel");
+        System.out.println("\uD83D\uDD34 0) Cancel");
 
-        int choice = ValidUserInput.getIntChoice("Select topping to remove: ", 0, toppings.size());
+        int choice = ValidUserInput.getIntChoice("\uD83C\uDFAF Select topping to remove: ", 0, toppings.size());
 
         if (choice > 0) {
             String toppingName = toppings.get(choice - 1).getName();
             if (cake.removeTopping(toppingName)) {
-                System.out.println("✓ Removed " + toppingName);
+                System.out.println("✅ Removed " + toppingName);
             } else {
-                System.out.println("✗ Failed to remove topping");
+                System.out.println("❌ Failed to remove topping");
             }
         }
     }
 
     private static void addSignatureCakeToppings(SignatureCake cake) {
-        System.out.println("\nYou can add any additional toppings or fillings!");
-        System.out.println("This works just like customizing a regular cake.\n");
+        System.out.println("\n\uD83C\uDF6F\uD83C\uDF53 You can add any additional toppings or fillings!");
 
         boolean adding = true;
         while (adding) {
-            System.out.println("1) Add regular toppings (FREE)");
-            System.out.println("2) Add premium toppings (+$2.00 each)");
-            System.out.println("3) Add regular fillings (FREE)");
-            System.out.println("4) Add premium fillings (+$2.00 each)");
-            System.out.println("0) Done adding");
+            System.out.println("\uD83C\uDF53 1) Add regular toppings (FREE)");
+            System.out.println("✨ 2) Add premium toppings (\uD83D\uDCB8+$2.00 each)");
+            System.out.println("\uD83C\uDF6F 3) Add regular fillings (FREE)");
+            System.out.println("✨ 4) Add premium fillings (\uD83D\uDCB8+$2.00 each)");
+            System.out.println("\uD83D\uDED1 0) Done adding");
 
             int choice = ValidUserInput.getIntChoice("Choice: ", 0, 4);
 
@@ -354,23 +353,23 @@ public class HomeScreen {
     }
 
     public static void addSpecialMessageToCake(Cake cake) {
-        System.out.println("\n===== SPECIAL MESSAGE =====");
-        System.out.println("You can add a custom message or request a photo to be printed on the cake.");
-        System.out.println("Cost: +$5.00");
+        System.out.println("\n===== \uD83D\uDC8C SPECIAL MESSAGE \uD83D\uDC8C =====");
+        System.out.println("\uD83D\uDCDC You can add a custom message or request a photo to be printed on the cake.");
+        System.out.println("\uD83D\uDCB8 Cost: +$5.00");
         System.out.println();
-        System.out.print("Enter your message (or type 'cancel' to skip): ");
+        System.out.print("\uD83D\uDCAC Enter your message (or type 'cancel' to skip): ");
 
         Scanner scanner = new Scanner(System.in);
         String message = scanner.nextLine().trim();
 
         if (message.equalsIgnoreCase("cancel") || message.isEmpty()) {
-            System.out.println("✗ Special message cancelled.");
+            System.out.println("❌ Special message cancelled.");
             return;
         }
 
         // Set the message
         cake.setSpecialMessage(message);
-        System.out.println("✓ Special message added: \"" + message + "\"");
+        System.out.println("✅ Special message added: \"" + message + "\"");
         System.out.println("  (+$5.00)");
     }
 }
