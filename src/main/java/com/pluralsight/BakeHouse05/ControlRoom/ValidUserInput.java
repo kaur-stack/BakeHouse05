@@ -2,9 +2,15 @@ package com.pluralsight.BakeHouse05.ControlRoom;
 
 import java.util.Scanner;
 
+/**
+ * ValidUserInput: helper for reading safe console input.
+ */
 public class ValidUserInput {
     private static final Scanner console = new Scanner(System.in);
 
+    /**
+     * Ask for an integer between min and max. Keep asking until valid.
+     */
     public static int getIntChoice(String prompt, int min, int max) {
         while (true) {
             System.out.print(prompt);
@@ -20,6 +26,9 @@ public class ValidUserInput {
         }
     }
 
+    /**
+     * Ask a yes/no question. Return true for yes, false for no.
+     */
     public static boolean getYesNo(String prompt) {
         while (true) {
             System.out.print(prompt + " (y/n): ");
@@ -33,6 +42,9 @@ public class ValidUserInput {
         }
     }
 
+    /**
+     * Wait until the user presses Enter.
+     */
     public static void waitForEnter() {
         System.out.print("\nPress Enter to continue...");
         console.nextLine();

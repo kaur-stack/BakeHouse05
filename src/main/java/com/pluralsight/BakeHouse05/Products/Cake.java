@@ -8,6 +8,9 @@ import com.pluralsight.BakeHouse05.BaseRoom.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Cake: customizable cake with size, type, toppings and optional message.
+ */
 public class Cake extends Product {
     private final CakeSize size;
     private final CakeType type;
@@ -55,6 +58,10 @@ public class Cake extends Product {
         return specialMessage;
     }
 
+    /**
+     * Calculate total price: base price + topping costs + special message fee.
+     * @return total price in dollars
+     */
     @Override
     public double calculatePrice() {
         double total = basePrice;
@@ -70,6 +77,10 @@ public class Cake extends Product {
         return total;
     }
 
+    /**
+     * Return a multi-line description for display or receipt.
+     * @return description string
+     */
     @Override
     public String getDescription() {
         StringBuilder sb = new StringBuilder();

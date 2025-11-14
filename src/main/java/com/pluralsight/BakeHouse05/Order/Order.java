@@ -10,10 +10,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Order: list of products and order time.
+ */
 public class Order {
     private final List<Product> products;
     private final LocalDateTime orderTime;
 
+    /**
+     * Create a new empty order. Sets current time.
+     */
     public Order() {
         this.products = new ArrayList<>();
         this.orderTime = LocalDateTime.now();
@@ -26,14 +32,26 @@ public class Order {
         return products;
     }
 
+    /**
+     * Add a product to this order.
+     * @param product product to add
+     */
     public void addProduct(Product product) {
         products.add(product);
     }
 
+    /**
+     * Check if the order has no products.
+     * @return true if empty
+     */
     public boolean isEmpty() {
         return products.isEmpty();
     }
 
+    /**
+     * Basic order validation. Must have at least one item.
+     * @return true if order is valid
+     */
     public boolean isValid() {
         if (products.isEmpty()) {
             return false;
@@ -61,6 +79,11 @@ public class Order {
 
         return totalPrice;
     }
+
+    /**
+     * Build a printable order summary for console display.
+     * @return the order summary text
+     */
 
     public String getOrderSummary() {
         StringBuilder descriptionBuilder = new StringBuilder();

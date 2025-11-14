@@ -17,10 +17,16 @@ import java.util.Scanner;
 import static com.pluralsight.BakeHouse05.ControlRoom.ToppingMenu.*;
 import static com.pluralsight.BakeHouse05.ControlRoom.ToppingMenu.addPremiumFillings;
 
+/**
+ * HomeScreen: console menus and main app flow.
+ */
 public class HomeScreen {
     private static Order currentOrder;
     private static final ReceiptsFileManager receiptsFileManager = new ReceiptsFileManager();
 
+    /**
+     * Show the main home screen. User starts orders here.
+     */
     public static void showHomeScreen() {
         Display.displayWelcome();
 
@@ -44,6 +50,9 @@ public class HomeScreen {
         }
     }
 
+    /**
+     * Show order screen where user can add items and checkout.
+     */
     private static void showOrderScreen() {
         boolean orderInProcess = true;
 
@@ -79,6 +88,9 @@ public class HomeScreen {
         }
     }
 
+    /**
+     * Guide user to build a custom cake and add it to the order.
+     */
     private static void addCake() {
         System.out.println("\n========== \uD83C\uDF70 CUSTOMIZE YOUR CAKE \uD83C\uDF70 ==========\n");
 
@@ -123,6 +135,9 @@ public class HomeScreen {
         System.out.printf("  This cake costs: $%.2f\n", cake.calculatePrice());
     }
 
+    /**
+     * Guide user to add a drink to current order.
+     */
     private static void addDrink() {
         System.out.println("\n========== \uD83C\uDF79 ADD DRINK \uD83E\uDD42 ==========\n");
 
@@ -153,6 +168,9 @@ public class HomeScreen {
         System.out.printf("  Price: $%.2f\n", drink.calculatePrice());
     }
 
+    /**
+     * Guide user to add a side item to current order.
+     */
     private static void addSide() {
         System.out.println("\n========== \uD83C\uDF6A ADD SIDE \uD83C\uDF6A ==========\n");
 
@@ -176,6 +194,10 @@ public class HomeScreen {
         System.out.printf("  Price: $%.2f\n", side.calculatePrice());
     }
 
+    /**
+     * Show checkout details and save receipt if confirmed.
+     * @return true if order completed (so customer can end flow)
+     */
     private static boolean checkout() {
         System.out.println("\n========== \uD83D\uDED2 CHECKOUT \uD83D\uDED2 ==========\n");
 
@@ -204,6 +226,9 @@ public class HomeScreen {
     }
 
     // Handle Signature Order:
+    /**
+     * Start the signature cake flow (preset cakes).
+     */
     public static void addSignatureCake() {
         System.out.println("\n========== SIGNATURE CAKES ==========\n");
         System.out.println("\uD83D\uDC69\uD83C\uDFFB\u200D\uD83C\uDF73 Our chef's special pre-designed cakes!");
@@ -296,6 +321,10 @@ public class HomeScreen {
 
     }
 
+    /**
+     * Remove one topping from a signature cake by user choice.
+     * @param cake the signature cake
+     */
     private static void removeSignatureCakeTopping(SignatureCake cake) {
         List<Topping> toppings = cake.getToppingsList();
 
@@ -322,6 +351,10 @@ public class HomeScreen {
         }
     }
 
+    /**
+     * Let user add additional toppings to a signature cake.
+     * @param cake signature cake to modify
+     */
     private static void addSignatureCakeToppings(SignatureCake cake) {
         System.out.println("\n\uD83C\uDF6F\uD83C\uDF53 You can add any additional toppings or fillings!");
 
@@ -355,6 +388,11 @@ public class HomeScreen {
         }
     }
 
+    /**
+     * Prompt user to enter a special message for a cake.
+     * If user cancels or enters empty, do nothing.
+     * @param cake cake to add message to
+     */
     public static void addSpecialMessageToCake(Cake cake) {
         System.out.println("\n===== \uD83D\uDC8C SPECIAL MESSAGE \uD83D\uDC8C =====");
         System.out.println("\uD83D\uDCDC You can add a custom message or request a photo to be printed on the cake.");

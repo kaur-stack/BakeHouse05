@@ -252,6 +252,7 @@ BakeHouse05/
 ```
 ---
 ## 🖼️ Application Screenshots
+![fav piece of code.png](Asserts/fav%20piece%20of%20code.png)
 
 ### 🏠Home Screen
 ![home screen.png](Asserts/home%20screen.png)
@@ -263,7 +264,7 @@ BakeHouse05/
 ![Receipt.png](Asserts/Receipt.png)
 
 ### 🖼️ Favorite Code
-![fav piece of code.png](Asserts/fav%20piece%20of%20code.png)
+![Fav code.png](Asserts/Fav%20code.png)
 
 ---
 
