@@ -12,10 +12,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ReceiptsFileManager: save order receipts to text files.
+ */
 public class ReceiptsFileManager {
     private static final String RECEIPTS_FOLDER = "ReceiptData/";
     private static final DateTimeFormatter FILE_NAME_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
+    /**
+     * Create and write a receipt file for the given order.
+     *
+     * @param order the order to save
+     */
     public void generateReceipt(Order order) {
         String fullFilePath = RECEIPTS_FOLDER + order.getOrderTime().format(FILE_NAME_FORMATTER) + ".txt";
 
@@ -28,17 +36,23 @@ public class ReceiptsFileManager {
 
             writeReceiptEnding(bufferedWriter, order);
 
-            System.out.println("\n SUCCESS: Receipt saved to " + fullFilePath);
+            System.out.println("\n✅ SUCCESS: Receipt saved to " + fullFilePath);
 
         } catch (IOException e) {
-            System.err.println("\n✗ ERROR: Failed to save receipt: " + e.getMessage());
+            System.err.println("\n❌ ERROR: Failed to save receipt: " + e.getMessage());
         }
     }
 
+    /**
+     * Write the top header of the receipt file.
+     * @param bufferedWriter writer to the file
+     * @param order the order
+     * @throws IOException if writing fails
+     */
     private void writeReceiptHeader(BufferedWriter bufferedWriter, Order order) throws IOException {
         bufferedWriter.write("========================================================");
         bufferedWriter.newLine();
-        bufferedWriter.write("              BAKEHOUSE05: Order Receipt                ");
+        bufferedWriter.write("             \uD83C\uDF70BAKEHOUSE05: Order Receipt\uD83C\uDF70                ");
         bufferedWriter.newLine();
         bufferedWriter.write("           Your Custom Cake Shop Experience            ");
         bufferedWriter.newLine();
@@ -51,6 +65,12 @@ public class ReceiptsFileManager {
         bufferedWriter.newLine();
     }
 
+    /**
+     * Write the order items section (cakes, drinks, sides).
+     * @param bufferedWriter writer to the file
+     * @param order the order
+     * @throws IOException if writing fails
+     */
     private void writeOrderDetails(BufferedWriter bufferedWriter, Order order) throws IOException {
         List<Product> allProducts = order.getProducts();
 
@@ -103,6 +123,12 @@ public class ReceiptsFileManager {
 
     }
 
+    /**
+     * Write footer with total and thank you text.
+     * @param bufferedWriter writer to the file
+     * @param order the order
+     * @throws IOException if writing fails
+     */
     private void writeReceiptEnding(BufferedWriter bufferedWriter, Order order) throws IOException {
         bufferedWriter.write("--------------------------------------------------------");
         bufferedWriter.newLine();
@@ -113,9 +139,9 @@ public class ReceiptsFileManager {
 
         bufferedWriter.write("========================================================");
         bufferedWriter.newLine();
-        bufferedWriter.write("         Thank you for visiting Bakehouse05!           ");
+        bufferedWriter.write("       ❤\uFE0FThank you for visiting Bakehouse05!❤\uFE0F           ");
         bufferedWriter.newLine();
-        bufferedWriter.write("              We hope you enjoy your treats!            ");
+        bufferedWriter.write("             We hope you enjoy your treats!🍰            ");
         bufferedWriter.newLine();
         bufferedWriter.write("========================================================");
         bufferedWriter.newLine();

@@ -2,6 +2,9 @@ package com.pluralsight.BakeHouse05.BaseRoom;
 
 import com.pluralsight.BakeHouse05.Models.ToppingCategory;
 
+/**
+ * Topping: represents a cake topping or filling.
+ */
 public class Topping {
     private final String name;
     private final ToppingCategory category;
@@ -17,6 +20,12 @@ public class Topping {
         return name;
     }
 
+    /**
+     * Get the price for this topping.
+     * Regular: free or +1.50 if extra.
+     * Premium: +2.00 or +3.50 if extra.
+     * @return price in dollars
+     */
     public double getPrice() {
         if (category == ToppingCategory.REGULAR) {
             return isExtra ? 1.50 : 0.00;
@@ -27,6 +36,10 @@ public class Topping {
         }
     }
 
+    /**
+     * Return a short label for menus or receipts.
+     * @return formatted text like "Strawberry (Premium) +$2.00"
+     */
     @Override
     public String toString() {
         String result = name;
