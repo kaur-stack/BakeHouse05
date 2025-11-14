@@ -132,6 +132,7 @@ public class HomeScreen {
             System.out.println((i + 1) + ") " + flavors[i].getDisplay());
         }
 
+        System.out.println("\n" + "=".repeat(50));
         int flavorChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, flavors.length);
         DrinkFlavor userPickedFlavor = flavors[flavorChoice - 1];
 
@@ -161,6 +162,8 @@ public class HomeScreen {
             System.out.printf("%d) %s - $%.2f\n", (i + 1),
                     types[i].getDisplay(), types[i].getPrice());
         }
+
+        System.out.println("\n" + "=".repeat(50));
         int sideChoice = ValidUserInput.getIntChoice("\uD83D\uDCCC Choice: ", 1, types.length);
         SideType userPickedType = types[sideChoice - 1];
 

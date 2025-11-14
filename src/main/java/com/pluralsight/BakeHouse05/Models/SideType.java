@@ -1,9 +1,9 @@
 package com.pluralsight.BakeHouse05.Models;
 
 public enum SideType {
-    CUPCAKE("Cupcake", 3.99),
-    COOKIE("Cookie", 2.99),
-    BROWNIE("Brownie", 4.99);
+    CUPCAKE("\uD83E\uDDC1 Cupcake", 3.99),
+    COOKIE("\uD83C\uDF6A Cookie", 2.99),
+    BROWNIE("\uD83C\uDF6B Brownie", 4.99);
 
 
     private final String display;

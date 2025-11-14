@@ -1,4 +1,4 @@
-# 🪙 BAKEHOUSE05 - Custom Cake Shop
+# 🍰 BAKEHOUSE05 - Custom Cake Shop
 
 ---
 
@@ -254,12 +254,16 @@ BakeHouse05/
 ## 🖼️ Application Screenshots
 
 ### 🏠Home Screen
+![home screen.png](Asserts/home%20screen.png)
 
 ### 🧁Custom Cake Screen
+![signature screen.png](Asserts/signature%20screen.png)
 
 ### 🧾Receipt Output
+![Receipt.png](Asserts/Receipt.png)
 
 ### 🖼️ Favorite Code
+![fav piece of code.png](Asserts/fav%20piece%20of%20code.png)
 
 ---
 
