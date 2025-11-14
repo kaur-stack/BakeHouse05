@@ -1,4 +1,5 @@
-package com.pluralsight.Capstone2;
+package com.pluralsight.BakeHouse05;
 
 public interface Price {
+    double calculatePrice();
 }
