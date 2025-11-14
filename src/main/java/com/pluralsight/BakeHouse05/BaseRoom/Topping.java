@@ -1,4 +1,6 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.BaseRoom;
+
+import com.pluralsight.BakeHouse05.Models.ToppingCategory;
 
 public class Topping {
     private final String name;

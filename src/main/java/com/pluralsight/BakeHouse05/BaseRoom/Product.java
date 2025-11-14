@@ -1,6 +1,6 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.BaseRoom;
 
-public abstract class Product implements Price, Customizable{
+public abstract class Product implements Price, Customizable {
     protected String name;
     protected double basePrice;
 

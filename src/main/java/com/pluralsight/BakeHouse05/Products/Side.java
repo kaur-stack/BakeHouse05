@@ -1,4 +1,7 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.Products;
+
+import com.pluralsight.BakeHouse05.Models.SideType;
+import com.pluralsight.BakeHouse05.BaseRoom.Product;
 
 public class Side extends Product {
     private final SideType type;

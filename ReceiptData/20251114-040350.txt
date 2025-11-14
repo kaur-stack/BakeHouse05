@@ -1,0 +1,22 @@
+========================================================
+              BAKEHOUSE05: Order Receipt                
+           Your Custom Cake Shop Experience            
+========================================================
+Order Time: 20251114-040350
+--------------------------------------------------------
+
+CAKES:
+1. Small (6") Vanilla Cake
+  Toppings:
+    - Vanilla Cream (Extra) +$1.50
+    - Buttercream - FREE
+    - Chocolate Ganache (Extra) +$1.50
+  Price: $18.99
+
+--------------------------------------------------------
+ORDER TOTAL: $18.99
+
+========================================================
+         Thank you for visiting Bakehouse05!           
+              We hope you enjoy your treats!            
+========================================================

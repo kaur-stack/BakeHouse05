@@ -1,14 +1,15 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.Models;
 
-public enum DrinkSize {
-    SMALL("Small", 1.99),
-    MEDIUM("Medium", 2.99),
-    LARGE("Large", 3.99);
+public enum SideType {
+    CUPCAKE("Cupcake", 3.99),
+    COOKIE("Cookie", 2.99),
+    BROWNIE("Brownie", 4.99);
+
 
     private final String display;
     private final double price;
 
-    DrinkSize(String display, double price) {
+    SideType(String display, double price) {
         this.display = display;
         this.price = price;
     }
