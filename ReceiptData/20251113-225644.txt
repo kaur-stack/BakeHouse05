@@ -1,0 +1,36 @@
+========================================================
+              BAKEHOUSE05: Order Receipt                
+           Your Custom Cake Shop Experience            
+========================================================
+Order Time: 20251113-225644
+--------------------------------------------------------
+
+CAKES:
+1. Small (6") Vanilla Cake
+  Toppings:
+    - Vanilla Cream
+    - Pistachio Cream (Extra) +$1.50
+  Special Message: "HAPPY BIRTHDAY LOVE" (+$5.00)
+  Price: $22.49
+2. ⭐ Red Velvet Delight (Customized)
+   Large (12") | Red Velvet
+  Toppings & Fillings:
+    - White Chocolate Strawberries +$2.00
+    - Buttercream
+    - Edible Gold (Extra) +$1.50
+  Special Message: Yes (+$5.00)
+  Price: $44.49
+
+DRINKS:
+1. Small Coffee - $1.99
+
+SIDES:
+1. Cupcake - $3.99
+
+--------------------------------------------------------
+ORDER TOTAL: $72.96
+
+========================================================
+         Thank you for visiting Bakehouse05!           
+              We hope you enjoy your treats!            
+========================================================
