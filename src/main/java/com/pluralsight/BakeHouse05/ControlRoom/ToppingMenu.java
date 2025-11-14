@@ -1,4 +1,8 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.ControlRoom;
+
+import com.pluralsight.BakeHouse05.BaseRoom.Topping;
+import com.pluralsight.BakeHouse05.Models.ToppingCategory;
+import com.pluralsight.BakeHouse05.Products.Cake;
 
 public class ToppingMenu {
     // ===== REGULAR FILLINGS MENU =====
