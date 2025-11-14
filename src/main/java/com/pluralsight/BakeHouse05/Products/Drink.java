@@ -1,4 +1,8 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.Products;
+
+import com.pluralsight.BakeHouse05.Models.DrinkFlavor;
+import com.pluralsight.BakeHouse05.Models.DrinkSize;
+import com.pluralsight.BakeHouse05.BaseRoom.Product;
 
 public class Drink extends Product {
     private final DrinkSize size;

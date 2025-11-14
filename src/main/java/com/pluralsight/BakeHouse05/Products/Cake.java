@@ -1,4 +1,9 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.Products;
+
+import com.pluralsight.BakeHouse05.Models.CakeSize;
+import com.pluralsight.BakeHouse05.Models.CakeType;
+import com.pluralsight.BakeHouse05.BaseRoom.Product;
+import com.pluralsight.BakeHouse05.BaseRoom.Topping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,5 +90,4 @@ public class Cake extends Product {
 
         return sb.toString();
     }
-
 }

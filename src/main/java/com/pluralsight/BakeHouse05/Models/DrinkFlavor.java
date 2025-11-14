@@ -1,4 +1,4 @@
-package com.pluralsight.BakeHouse05;
+package com.pluralsight.BakeHouse05.Models;
 
 public enum DrinkFlavor {
     COFFEE("Coffee"),
