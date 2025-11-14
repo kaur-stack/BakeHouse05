@@ -1,9 +1,9 @@
 package com.pluralsight.BakeHouse05.Models;
 
 public enum DrinkSize {
-    SMALL("Small", 1.99),
-    MEDIUM("Medium", 2.99),
-    LARGE("Large", 3.99);
+    SMALL("Small", 4.99),
+    MEDIUM("Medium", 5.99),
+    LARGE("Large", 6.99);
 
     private final String display;
     private final double price;
